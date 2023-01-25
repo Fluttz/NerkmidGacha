@@ -152,6 +152,17 @@ function genNP(prize){
     if ((prize>130)&&(randInt(1,100)==1)){
       nps = nps + 25000;
     }
+	var result = "<b>";
+	if (nps<1000){
+	nps = result.concat(nps," NP<\/b>");
+	} else if (nps<10000){
+	nps = result.concat("<span style=\"color: #99cc00;\">",nps," NP</span><\/b>");
+	dispense</span>
+	} else if (nps<40000){
+	nps = result.concat("<span style=\"color: #3366ff;\">",nps," NP</span><\/b>");
+	} else {
+	nps = result.concat("<span style=\"color: #9D218A;\">",nps," NP</span><\/b>");
+	} else 
     return nps;
 }
 
@@ -214,7 +225,7 @@ function genPrize(prize,butNum,levNum){
   var npReward = genNP(prize);
   var itemReward = genItem(prize);
   var result = "";
-  return result.concat("<b>",npReward," NP<\/b><br>",itemReward); 
+  return result.concat(npReward,"<br>",itemReward); 
 }
 
 function gachaOne(){
