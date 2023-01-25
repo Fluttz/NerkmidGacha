@@ -9,6 +9,7 @@ table.center {
   margin-right: auto;
 }
 </style>
+<h2 style="color: #5e9ca0; text-align: center;"><strong><span style="color: #000000;">Alien Aisha Vending Machine Simulator</span></strong></h2>
 <p style="color: #5e9ca0; text-align: center;"><span style="color: #000000;">Put a Nerkmid in the machine, and it will dispense rare and exotic foods for your pet. Press the buttons and push the levers for a chance to get a rarer treat!</span></p>
 <p style="color: #5e9ca0; text-align: center;"><span style="color: #000000;"><img src="https://fluttz.github.io/NerkmidGacha/images/noshomatic.gif" id="nosh" alt="" /></span></p>
 <p style="color: #5e9ca0; text-align: center;"><strong><span style="color: #000000;">Your Nerkmids</span></strong></p>
@@ -162,7 +163,6 @@ function genItem(prize){
   }
   var roll = randInt(1,20);
   if (roll<15){
-    return "<img src=\"https:\/\/images.neopets.com\/items\/grf_aisha_splurgles.gif\"><br><b>Gross food<\/b>";
 	var minrar = prize - 25;
 	var itemnum = randInt(0,214);
 	while (foods[itemnum*3+1]<minrar){
@@ -226,6 +226,9 @@ function gachaOne(){
   if ((sel1>0)&&(sel2>0)&&(sel3>0)&&(sel4>0)&&(sel5>0)){
     document.getElementById("nosh").src = "https://fluttz.github.io/NerkmidGacha/images/noshomatic2.gif";
     document.getElementById("rewards").innerHTML = genPrize(sel1,sel2,sel3);
+  } else {
+	document.getElementById("nosh").src = "https://fluttz.github.io/NerkmidGacha/images/noshomatic.gif";
+    document.getElementById("rewards").innerHTML = "Please make a selection in each row!";
   }
   
 }
@@ -245,6 +248,9 @@ function gachaTen(){
 	output = output.concat("<\/tr><\/table>");
 	
 	document.getElementById("rewards").innerHTML = output;
+  } else {
+	document.getElementById("nosh").src = "https://fluttz.github.io/NerkmidGacha/images/noshomatic.gif";
+    document.getElementById("rewards").innerHTML = "Please make a selection in each row!";
   }
   
 }
