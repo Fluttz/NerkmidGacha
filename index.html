@@ -189,21 +189,21 @@ function genItem(prize){
 	var itemname = nerks[itemnum*3];
 	var itemurl = nerks[itemnum*3+2];
 	var result = "<img src=\"https:\/\/fluttz.github.io\/NerkmidGacha\/images\/";
-	result = result.concat(itemurl,".gif\"><br><b>",itemname,"<\/b>");
+	result = result.concat(itemurl,".gif\"><br><b><span style=\"color: #3366ff;\">",itemname,"</span><\/b>");
 	return result;
   } else if (roll<20){
 	var itemnum = randInt(0,5);
 	var itemname = faeries[itemnum*3];
 	var itemurl = faeries[itemnum*3+2];
 	var result = "<img src=\"https:\/\/fluttz.github.io\/NerkmidGacha\/images\/";
-	result = result.concat(itemurl,".gif\"><br><b>",itemname,"<\/b>");
+	result = result.concat(itemurl,".gif\"><br><b><span style=\"color: #99cc00;\">",itemname,"</span><\/b>");
 	return result;
   } else {
 	var itemnum = randInt(0,102);
 	var itemname = brushes[itemnum*3];
 	var itemurl = brushes[itemnum*3+2];
 	var result = "<img src=\"https:\/\/fluttz.github.io\/NerkmidGacha\/images\/";
-	result = result.concat(itemurl,".gif\"><br><b>",itemname,"<\/b>");
+	result = result.concat(itemurl,".gif\"><br><b><span style=\"color: #9D218A;\">",itemname,"</span><\/b>");
 	return result;
   }
 }
