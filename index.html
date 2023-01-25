@@ -153,14 +153,15 @@ function genNP(prize){
     }
 	var result = "<b>";
 	if (nps<1000){
-	nps = result.concat(nps," NP<\/b>");
+	result = result.concat(nps," NP<\/b>");
 	} else if (nps<10000){
-	nps = result.concat("<span style=\"color: #99cc00;\">",nps," NP</span><\/b>");
+	result = result.concat("<span style=\"color: #99cc00;\">",nps," NP</span><\/b>");
 	} else if (nps<40000){
-	nps = result.concat("<span style=\"color: #3366ff;\">",nps," NP</span><\/b>");
+	result = result.concat("<span style=\"color: #3366ff;\">",nps," NP</span><\/b>");
 	} else {
-	nps = result.concat("<span style=\"color: #9D218A;\">",nps," NP</span><\/b>");
+	result = result.concat("<span style=\"color: #9D218A;\">",nps," NP</span><\/b>");
 	}
+	return result;
 }
 
 function genItem(prize){
