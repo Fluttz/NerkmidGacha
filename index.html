@@ -221,6 +221,7 @@ function genNP(prize){
 	if (nps > count7){
 		count7 = nps;
 	}
+	profit = profit + result;
 	return result;
 }
 
@@ -244,9 +245,13 @@ function genItem(prize){
 	count2++;
 	return result;
   } else if (roll<18){
-	var itemnum = randInt(0,17);
+	var itemnum = randInt(0,19);
+	while (itemnum == 15||itemnum == 18){
+		itemnum = randInt(0,19);
+	}
 	var itemname = nerks[itemnum*3];
 	var itemurl = nerks[itemnum*3+2];
+	profit = profit + price[itemnum];
 	var result = "<img src=\"https:\/\/fluttz.github.io\/NerkmidGacha\/images\/";
 	result = result.concat(itemurl,".gif\"><br><b><span style=\"color: #3366ff;\">",itemname,"<\/span><\/b>");
 	count4++;
@@ -263,6 +268,7 @@ function genItem(prize){
 	var itemnum = randInt(0,102);
 	var itemname = brushes[itemnum*3];
 	var itemurl = brushes[itemnum*3+2];
+	profit = profit + prof[itemnum];
 	var result = "<img src=\"https:\/\/fluttz.github.io\/NerkmidGacha\/images\/";
 	result = result.concat(itemurl,".gif\"><br><b><span style=\"color: #9D218A;\">",itemname,"<\/span><\/b>");
 	count5++;
@@ -300,7 +306,7 @@ function genPrize(prize,butNum,levNum){
   } else {
 	  rewbox = rewbox.concat("<span style=\"color: #9D218A;\">Neopoints record: ",count7," NP<\/span>");
   }
-rewbox = rewbox.concat("<br>Total profit: ",profit,"<\/b>");
+  rewbox = rewbox.concat("<br>Total profit: ",profit,"<\/b>");
   document.getElementById("rewardbox").innerHTML = rewbox;
   return result.concat(npReward,"<br>",itemReward);
 }
