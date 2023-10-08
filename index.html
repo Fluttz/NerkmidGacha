@@ -306,7 +306,8 @@ function genPrize(prize,butNum,levNum){
   } else {
 	  rewbox = rewbox.concat("<span style=\"color: #9D218A;\">Neopoints record: ",count7," NP<\/span>");
   }
-  rewbox = rewbox.concat("<br>Total profit: ",profit," NP<\/b>");
+  var aver = profit/count1;
+  rewbox = rewbox.concat("<br>Total profit: ",profit," NP<br>Profit per spin: ",aver,"NP<\/b>");
   document.getElementById("rewardbox").innerHTML = rewbox;
   return result.concat(npReward,"<br>",itemReward);
 }
